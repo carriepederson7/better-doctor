@@ -3,9 +3,7 @@ export class Info {
   conditions() {
     return new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();
-      // let apiKey = process.env.apiKey;
-    
-      console.log(url);
+
       request.onload = function() {
         if (this.status === 200) {
           resolve(request.response);
