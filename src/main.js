@@ -47,21 +47,25 @@ $(document).ready(function() {
         profiles.forEach(function(profile) {
 
           for (let i = 0; i < profile.specialties.length; i++) {
-            console.log(profile.specialties[i].actor);
-            if (profile.specialties[i].actor === practice) {
+            for(let j =0; j<profile.practices.length; j++){
+              if (profile.specialties[i].actor === practice) {
               $("#practiceSearch").append(`<li>${profile.profile.first_name} ${profile.profile.last_name}</li>`);
+              $("#practiceSearch").append(`<li>${profile.practices[0].visit_address.street} , ${profile.practices[0].visit_address.city}, ${profile.practices[0].visit_address.state}, ${profile.practices[0].visit_address.zip}</li>`);
+              }
             }
           }
         });
         profiles.forEach(function(profile) {
+         for(let j =0; j<profile.practices.length; j++){
           if (profile.profile.first_name === name || profile.profile.last_name === name) {
             $("#doctorSearch").append(`<li>${profile.profile.first_name} ${profile.profile.last_name}</li>`);
+            $("#doctorSearch").append(`<li>${profile.practices[0].visit_address.street} , ${profile.practices[0].visit_address.city}, ${profile.practices[0].visit_address.state}, ${profile.practices[0].visit_address.zip}</li>`);
           }
+        }
         });
 
         // practices.forEach(function(practice){
         //   if(profile.profile.first_name === name || profile.profile.last_name === name)
-        //   $("#contactAddress").append(`<li>${practice.visit_address.street} , ${practice.visit_address.city}, ${practice.visit_address.state}, ${practice.visit_address.zip}</li>`);
         //
         // });
 
