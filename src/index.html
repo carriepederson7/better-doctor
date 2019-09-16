@@ -10,9 +10,10 @@
   <div class="container">
 
 
-    <form id=health-info>
-      <h3>What type of doctor are you looking for?</h3>
+    <form id="health-info">
+      <h4>Select a type of doctor:</h4>
       <select id="practice">
+        <option type="radio" value="">Please select a caetgory<br>
         <option type="radio" value="Pediatrician"> Pediatrician<br>
         <option type="radio" value="Internist">Internist<br>
         <option type="radio" value="Neurologist">Neurologist <br>
@@ -27,14 +28,17 @@
 
       <div id="practiceSearch">
       </div>
-      <div id="practiceSearchAddress">
-      </div>
 
-      <h3>Who do you want to see?</h3>
+      <h4>Enter the name of a doctor:</h4>
       <label for="">Enter a name:</label>
       <input id="doctor-name" type="text">
       <button type="submit" name="button">Submit!</button>
+      <!-- <button type="button" id=reset>Reset form </button> -->
+
     </form>
+
+
+
 
     <div id="doctorSearch">
     </div>
