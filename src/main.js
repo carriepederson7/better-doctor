@@ -36,7 +36,11 @@ $(document).ready(function() {
           $("#doc-info").submit(function(event) {
               event.preventDefault();
               const practice = $("#practice").val();
-              const name = $("#name").val();
+              const rawName = $("#name").val();
+              let endOfName = rawName.slice(1);
+              let capitalFirstLetter = rawName.charAt(0).toUpperCase();
+              const name= capitalFirstLetter + endOfName
+
 
             let info = new Info();
             let promise = info.doctors(name, practice)
@@ -47,8 +51,9 @@ $(document).ready(function() {
                 console.log(body);
 
                 profiles.forEach(function(profile) {
-                  for (let i = 0; i < profile.profile.length; i++) {
-                    if (profile.profile.first_name === name || profile.profile.last_name === name )
+                  for (let i = 0; i < profile.specialties.length; i++) {
+                    if  (profile.profile.first_name === name || profile.profile.last_name === name)
+
                     {
                       $("#doctorSearch").append(`<li>${profile.profile.first_name} ${profile.profile.last_name}</li>`);
                       $("#doctorSearch").append(`${profile.practices[0].visit_address.street} , ${profile.practices[0].visit_address.city}, ${profile.practices[0].visit_address.state}, ${profile.practices[0].visit_address.zip},
@@ -62,11 +67,6 @@ $(document).ready(function() {
 
 
 
-              // docNames.forEach(function(docName) {
-              //   if (docName === name) {
-              //     alert("namefound");
-              //     // $("#doctorSearch").append(`${profile.profile.first_name} ${profile.profile.last_name}`)
-              //   }
 
             });
 
