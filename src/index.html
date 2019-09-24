@@ -8,46 +8,48 @@
 
 <body>
   <div class="container">
+    <div class="row">
+      <div class="col-md-6">
 
+        <form id="health-info">
+          <h4>Select a type of doctor:</h4>
+          <select id="practice">
+            <option type="radio" value="">Please select a caetgory<br>
+            <option type="radio" value="pediatrician">Pediatrician<br>
+            <option type="radio" value="internist">Internist<br>
+            <option type="radio" value="neurologist">Neurologist <br>
+            <option type="radio" value="general-surgeon"> General Surgeon<br>
+            <option type="radio" value="nephrologist"> Nephrologist<br>
+            <option type="radio" value="physical-therapist">Physical Therapist <br>
+            <option type="radio" value="massage-therapist"> Massage Therapist<br>
+            <option type="radio" value="family-psychologist">Family Psychologist <br>
+            <option type="radio" value="gastroenterologist">Gastroenterologist <br>
+          </select>
 
-    <form id="health-info">
-      <h4>Select a type of doctor:</h4>
-      <select id="practice">
-        <option type="radio" value="">Please select a caetgory<br>
-        <option type="radio" value="Pediatrician"> Pediatrician<br>
-        <option type="radio" value="Internist">Internist<br>
-        <option type="radio" value="Neurologist">Neurologist <br>
-        <option type="radio" value="General Surgeon"> General Surgeon<br>
-        <option type="radio" value="Nephrologist"> Nephrologist<br>
-        <option type="radio" value="Physical Therapist">Physical Therapist <br>
-        <option type="radio" value="Massage Therapist"> Massage Therapist<br>
-        <<option type="radio" value="OBGYN">OBGYN <br>
-        <option type="radio" value="Family Psychologist">Family Psychologist <br>
-        <option type="radio" value="Gastroenterologist">Gastroenterologist <br>
-      </select>
+          <button type="submit" name="button">Submit!</button>
+          <div id="practiceSearch">
+          </div>
 
-      <button type="submit" name="button">Submit!</button>
-      <div id="practiceSearch">
+        </form>
       </div>
 
+      <div class="col-md-6">
+        <form id="doc-info">
 
-    </form>
+          <h5>Enter the name of a doctor:</h5>
+          <label>Enter a name:</label>
+          <input id="name" type="text">
+          <button id="doc-search-button" type="submit">Search by name</button>
 
+          <div id="doctorSearch">
+          </div>
+        </form>
+      </div>
 
-    <h5>Enter the name of a doctor:</h5>
-    <label>Enter a first name:</label>
-    <input id="doctor-first-name" type="text">
-    <label>Enter a last name:</label>
-    <input id="doctor-last-name" type="text">
-    <button id="doc-search-button" type="button">Search by name</button>
-
-
-    <div id="doctorSearch">
-    </div>
-
-    <!-- <div id="doctorSearchAddress">
+      <!-- <div id="doctorSearchAddress">
     </div> -->
 
+    </div>
   </div>
 
 
