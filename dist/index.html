@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Med Info</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+
+        <form id="health-info">
+          <h4>Select a type of doctor:</h4>
+          <select id="practice">
+            <option type="radio" value="">Please select a caetgory<br>
+            <option type="radio" value="pediatrician">Pediatrician<br>
+            <option type="radio" value="internist">Internist<br>
+            <option type="radio" value="neurologist">Neurologist <br>
+            <option type="radio" value="general-surgeon"> General Surgeon<br>
+            <option type="radio" value="nephrologist"> Nephrologist<br>
+            <option type="radio" value="physical-therapist">Physical Therapist <br>
+            <option type="radio" value="massage-therapist"> Massage Therapist<br>
+            <option type="radio" value="family-psychologist">Family Psychologist <br>
+            <option type="radio" value="gastroenterologist">Gastroenterologist <br>
+          </select>
+
+          <button type="submit" name="button">Submit!</button>
+          <div id="practiceSearch">
+          </div>
+
+        </form>
+      </div>
+
+      <div class="col-md-6">
+        <form id="doc-info">
+
+          <h5>Filter doctors by name:</h5>
+          <label>Enter a name:</label>
+          <input id="name" type="text">
+          <button id="doc-search-button" type="submit">Search by name</button>
+
+          <div id="doctorSearch">
+          </div>
+        </form>
+      </div>
+
+      <!-- <div id="doctorSearchAddress">
+    </div> -->
+
+    </div>
+  </div>
+
+
+<script type="text/javascript" src="bundle.js"></script></body>
+
+</html>
