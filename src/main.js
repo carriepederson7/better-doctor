@@ -9,7 +9,6 @@ $(document).ready(function() {
     event.preventDefault();
     const practice = $("#practice").val();
 
-
     let info = new Info();
     let promise = info.practices(practice)
 
@@ -19,19 +18,18 @@ $(document).ready(function() {
       console.log(body);
 
       profiles.forEach(function(profile) {
-          for (let i = 0; i < profile.specialties.length; i++) {
+          for (let i = 0; i < profile.specialties.length; i++){
             if (profile.specialties[i].actor === practice)
-              console.log(profile.specialties[i].actor) {
+              console.log(profile.specialties[i].actor)
+              {
                 $("#practiceSearch").append(`<li>${profile.profile.first_name} ${profile.profile.last_name}</li>`);
                 $("#practiceSearch").append(`${profile.practices[0].visit_address.street} , ${profile.practices[0].visit_address.city}, ${profile.practices[0].visit_address.state}, ${profile.practices[0].visit_address.zip},
                 ${profile.practices[0].phones[0].number} <br>Accepts new patients? ${profile.practices[0].accepts_new_patients}`);
               }
-            }, function(error) {
-              $(".showErrors").text(`There was an error processing your request: ${error.message}`);
-
+            }
           });
-        }
-
+      }, function(error) {
+      $(".showErrors").text(`There was an error processing your request: ${error.message}`);
     });
   });
 
@@ -61,11 +59,13 @@ $(document).ready(function() {
               $("#doctorSearch").append(`${profile.practices[0].visit_address.street} , ${profile.practices[0].visit_address.city}, ${profile.practices[0].visit_address.state}, ${profile.practices[0].visit_address.zip},
                   ${profile.practices[0].phones[0].number} <br>Accepts new patients? ${profile.practices[0].accepts_new_patients}`);
                 }
-            }, function(error) {
-              $(".showErrors").text(`There was an error processing your request: ${error.message}`);
+              }
 
           });
-        }
+
+        }, function(error) {
+          $(".showErrors").text(`There was an error processing your request: ${error.message}`);
+
     });
 
 
